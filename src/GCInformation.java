@@ -1,17 +1,19 @@
 import com.sun.management.GarbageCollectionNotificationInfo;
+import com.sun.management.GarbageCollectorMXBean;
 import com.sun.management.GcInfo;
+
 import javax.management.MBeanServer;
 import javax.management.Notification;
 import javax.management.NotificationEmitter;
 import javax.management.NotificationListener;
 import javax.management.openmbean.CompositeData;
 import java.lang.management.ManagementFactory;
-import com.sun.management.GarbageCollectorMXBean;
 import java.lang.management.MemoryUsage;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 public class GCInformation {
     private static final String GC_BEAN_NAME = "java.lang:type=GarbageCollector,name=PS Scavenge";
     private static volatile GarbageCollectorMXBean gcMBean;
@@ -103,7 +105,7 @@ public class GCInformation {
     public static void installGCMonitoring(){
         //get all the GarbageCollectorMXBeans - there's one for each heap generation
         //so probably two - the old generation and young generation
-        List<java.lang.management.GarbageCollectorMXBean> gcbeans = java.lang.management.ManagementFactory.getGarbageCollectorMXBeans();
+        List<java.lang.management.GarbageCollectorMXBean> gcbeans = ManagementFactory.getGarbageCollectorMXBeans();
         //Install a notifcation handler for each bean
         for (java.lang.management.GarbageCollectorMXBean gcbean : gcbeans) {
             System.out.println(gcbean);
