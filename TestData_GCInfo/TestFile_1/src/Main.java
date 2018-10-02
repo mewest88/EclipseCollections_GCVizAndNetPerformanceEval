@@ -5,12 +5,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
+        GCInformation.installGCMonitoring();
         // ----- For loop that fills an array with 50 million integers----- //
         ArrayList<Integer> numberList = new ArrayList<Integer>();
         List<Integer> numberList_2 = new ArrayList<Integer>();
 
-        int bigNum = 100000; //50000000
+        int bigNum = 50000000; //50000000
 
         long startTimeLoop = System.nanoTime();
         for(int i = 0; i < bigNum; i++) {
@@ -63,12 +63,12 @@ public class Main {
         String pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
         int pidInt = Integer.valueOf(pid);
 
-        GCInformationWithJMX GCJMXMonitor = new GCInformationWithJMX();
-        try {
-            GCJMXMonitor.monitor(pidInt);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        GCInformationWithJMX GCJMXMonitor = new GCInformationWithJMX();
+//        try {
+//            GCJMXMonitor.monitor(pidInt);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 //        boolean ret = GCInformation.printGCInfo();
     }

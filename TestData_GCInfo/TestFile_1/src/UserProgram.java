@@ -1,3 +1,15 @@
+import com.sun.management.GarbageCollectionNotificationInfo;
+
+import javax.management.Notification;
+import javax.management.NotificationEmitter;
+import javax.management.NotificationListener;
+import javax.management.openmbean.CompositeData;
+import java.lang.management.GarbageCollectorMXBean;
+import java.lang.management.MemoryUsage;
+import java.util.List;
+import java.util.Map;
+
+
 public class UserProgram implements UserProgramMBean
 {
   private long id1;
@@ -7,8 +19,9 @@ public class UserProgram implements UserProgramMBean
   private String password;
 
   @Override
-  public void getUserInfo() {
+  public String getUserInfo() {
     System.out.println("This is the username: " + userName);
+    return userName;
   }
   @Override
   public void setUserInfo(String _userName) {
