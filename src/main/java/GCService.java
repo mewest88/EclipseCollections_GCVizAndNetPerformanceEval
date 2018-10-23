@@ -16,5 +16,8 @@ public class GCService extends Service<GCConfiguration>
   @Override
   public void run(GCConfiguration configuration, Environment environment) {
     //TODO generate listener for program as well as the ReactJS program
+    //start the monitoring process
+    GCInformation.installGCMonitoring();
+
   }
 }

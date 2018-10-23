@@ -9,10 +9,8 @@ import javax.management.NotificationListener;
 import javax.management.openmbean.CompositeData;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryUsage;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class GCInformation {
     private static final String GC_BEAN_NAME = "java.lang:type=GarbageCollector,name=PS Scavenge";
