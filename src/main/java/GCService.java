@@ -11,6 +11,7 @@ public class GCService extends Service<GCConfiguration>
   @Override
   public void initialize(Bootstrap<GCConfiguration> bootstrap) {
     //TODO fill in the method to initialize the program
+    bootstrap.setName("Garbage Collector Starter");
   }
 
   @Override
