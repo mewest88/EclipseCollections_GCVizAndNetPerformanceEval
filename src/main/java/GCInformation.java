@@ -57,7 +57,7 @@ public class GCInformation {
                 //keep a count of the total time spent in GCs
                 long totalGcDuration = 0;
 
-                @Override
+//                @Override
                 public void handleNotification(Notification n, Object o) {
                     if (n.getType().equals(GarbageCollectionNotificationInfo.GARBAGE_COLLECTION_NOTIFICATION)) {
                         //get the information associated with this notification

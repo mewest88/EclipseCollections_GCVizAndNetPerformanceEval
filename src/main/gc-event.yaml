@@ -1,2 +1,3 @@
 gcEvent: GC with the following values: %s
+#Need default as we say that the value for a GCEvent cannot be null from the beginning
 gcEventDefault: No GC events yet

@@ -19,6 +19,7 @@ public class GCService extends Service<GCConfiguration>
     //TODO generate listener for program as well as the ReactJS program
     //start the monitoring process
     GCInformation.installGCMonitoring();
+    //start the react program
 
   }
 }
