@@ -12,6 +12,6 @@ public class GCResource
   @GET
   @Timed
   public void GarbageCollection() {
-    
+
   }
 }
